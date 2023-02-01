@@ -22,9 +22,9 @@ struct ContentView: View {
             ScrollView{
                 VStack {
                     NavigationLink {
-                        TestView()
+                        AddHabitClass()
                     } label: {
-                        Text("Hello World")
+                        Text("建立習慣")
                     }
                 }
                 VStack(spacing:16){

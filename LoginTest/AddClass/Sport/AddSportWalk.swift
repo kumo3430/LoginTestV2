@@ -9,8 +9,15 @@ import SwiftUI
 
 struct AddSportWalk: View {
     var body: some View {
-        Text("運動健走")
-        Text("運動健走")
+//        Text("運動健走")
+        NavigationView {
+            NavigationLink {
+                Text("Destination")
+            } label: {
+                Text("Tap me")
+            }
+        }
+
     }
 }
 

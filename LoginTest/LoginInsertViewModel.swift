@@ -13,6 +13,7 @@ class LoginInsertViewModel: ObservableObject {
 
     @Published var email: String = ""
     @Published var password: String = ""
+
     
     // 再點選Button的時候會執行此Funtion
     func onAddButtonClick() {

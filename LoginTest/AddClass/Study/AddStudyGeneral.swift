@@ -8,9 +8,45 @@
 import SwiftUI
 
 struct AddStudyGeneral: View {
+    
+//    @Published var taskName: String = ""
+    
     var body: some View {
-        Text("學習-一般")
-        Text("學習-一般")
+        NavigationStack{
+            VStack {
+                HStack(spacing: 20) {
+                    Text("名稱：")
+                    //TextField("Task Name", text: $viewModel.taskName)
+                        .textFieldStyle(.roundedBorder)
+                }
+                .padding()
+
+                HStack(spacing: 20) {
+                    Text("Start Date  :")
+                    //DatePicker("", selection: $viewModel.startDate)
+                    Spacer()
+                }
+                .padding()
+
+                HStack {
+                    Button(action: {
+                        //viewModel.onAddButtonClick()
+                    }) {
+                        Text("Add")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 30)
+                    }
+                    .background(.blue)
+                    .cornerRadius(.infinity)
+                    .padding()
+                }
+                Spacer()
+            }
+            .navigationTitle("學習")
+        }
+        
     }
 }
 

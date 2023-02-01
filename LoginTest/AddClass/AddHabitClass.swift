@@ -10,17 +10,16 @@ import SwiftUI
 struct AddHabitClass: View {
     var body: some View {
         
-        NavigationView{
-            ScrollView{
-                VStack {
-                    Text("習慣建立")
-                    NavigationLink {
-                        AddStudyGeneral()
-                    } label: {
-                        Text("學習")
-                    }
+        NavigationStack {
+            VStack{
+                NavigationLink("學習") {
+                    AddStudyGeneral()
+                }
+                NavigationLink("運動") {
+                    AddSportWalk()
                 }
             }
+            .navigationTitle("習慣建立")
         }
         
     }
