@@ -10,6 +10,7 @@ import SwiftUI
 struct AddStudyGeneral: View {
     var body: some View {
         Text("學習-一般")
+        Text("學習-一般")
     }
 }
 
