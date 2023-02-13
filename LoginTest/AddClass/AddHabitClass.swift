@@ -16,7 +16,7 @@ struct AddHabitClass: View {
                     AddStudyGeneral()
                 }
                 NavigationLink("運動") {
-                    AddSportWalk()
+                    AddSportWalk(viewModel: SportWalkInsertViewModel())
                 }
             }
             .navigationTitle("習慣建立")

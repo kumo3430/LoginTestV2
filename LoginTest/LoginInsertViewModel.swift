@@ -10,6 +10,8 @@ import Foundation
 class LoginInsertViewModel: ObservableObject {
     
     @Published var allTask: [Login] = []
+    @Published var allTag: [Tag] = []
+    @Published var allLive: [Lives] = []
 
     @Published var email: String = ""
     @Published var password: String = ""
@@ -31,6 +33,8 @@ class LoginInsertViewModel: ObservableObject {
     func getTaskList() {
         // 執行 TaskDataStore裡的getAllTasks()
         allTask = TaskDataStore.shared.getAllTasks()
+        allTag = TagDataStore.shared.getAllTasks()
+        allLive = LivesDataStore.shared.getAllTasks()
     }
     
 }
