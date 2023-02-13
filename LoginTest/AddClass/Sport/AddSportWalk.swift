@@ -39,7 +39,7 @@ struct AddSportWalk: View {
                     Group {
                         HStack {
                         Text("類別：")
-                            Picker(selection: $_classification) {
+                            Picker(selection: $viewModel._classification) {
                                 Text(classification[0]).tag(0)
                                 Text(classification[1]).tag(1)
                                 Text(classification[2]).tag(2)
@@ -47,13 +47,13 @@ struct AddSportWalk: View {
                             } label: {
                                 Text("選擇大類別")
                             }
-                            Picker(selection: $_sub_classification) {
+                            Picker(selection: $viewModel._sub_classification) {
                                 Text(sub_classification[0]).tag(0)
                                 Text(sub_classification[1]).tag(1)
                                 Text(sub_classification[2]).tag(2)
                                 Text(sub_classification[3]).tag(3)
                             } label: {
-                                Text("選擇大類別")
+                                Text("選擇小類別")
                             }
                         }
                         // 將帳號密碼的資料存放到LoginInsertViewModel的eamil
@@ -67,14 +67,14 @@ struct AddSportWalk: View {
                         HStack {
                             Text("標籤：")
                         }
-//                        HStack {
-//                            DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)
-//                            
-//                        }
-//                        HStack {
-//                            DatePicker("結束日期：", selection: $viewModel.alert_time,displayedComponents: .date)
-//                            
-//                        }
+                        HStack {
+                            DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)
+
+                        }
+                        HStack {
+                            DatePicker("結束日期：", selection: $viewModel.finish,displayedComponents: .date)
+
+                        }
                         HStack {
                             Text("目標：")
                             TextField("km", value:$viewModel.quantity, format: .number)
