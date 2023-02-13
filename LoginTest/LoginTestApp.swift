@@ -15,7 +15,7 @@ struct LoginTestApp: App {
     
         WindowGroup {
             ContentView(viewModel: LoginInsertViewModel())
-            AddSportWalk(viewModel: SportWalkInsertViewModel())
+//            AddSportWalk(viewModel: SportWalkInsertViewModel())
         }
     }
 }

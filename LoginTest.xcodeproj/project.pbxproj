@@ -74,11 +74,11 @@
 			children = (
 				13B340FA29850D6100D720A1 /* Info.plist */,
 				13237AC02962E69A00279877 /* Login.swift */,
-				13952502299A15F7005223B3 /* Data */,
 				13237AAA2962E23800279877 /* LoginTestApp.swift */,
 				13237AAC2962E23800279877 /* ContentView.swift */,
 				13B341242986CD3F00D720A1 /* LoginInsertViewModel.swift */,
 				13237ABE2962E63100279877 /* DataStore.swift */,
+				13952502299A15F7005223B3 /* Data */,
 				1394468D298A1AA50085FF36 /* AddClass */,
 				13237AAE2962E23900279877 /* Assets.xcassets */,
 				13237AB02962E23900279877 /* Preview Content */,
