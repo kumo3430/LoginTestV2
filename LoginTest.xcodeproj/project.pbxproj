@@ -175,6 +175,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-TW",
 			);
 			mainGroup = 13237A9E2962E23800279877;
 			packageReferences = (
