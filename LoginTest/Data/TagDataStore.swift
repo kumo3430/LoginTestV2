@@ -18,6 +18,7 @@ class TagDataStore {
 
     // 設定資料庫欄位名稱
     private let id = Expression<Int64>("id")
+    private let uid = Expression<Int>("uid")
     private let tagName = Expression<String>("tagName")
     private let tagCount = Expression<Int>("tagCount")
     private let create_at = Expression<Date>("create_at")
@@ -68,12 +69,12 @@ class TagDataStore {
     }
 
     // 將回傳進來的帳號密碼資料放到資料庫裡面
-    func insert(name: String, count: Int, create: Date) -> Int64? {
+    func insert(tagName: String, create_at: Date, uid: Int) -> Int64? {
         guard let database = db else { return nil }
 
-        let insert = tags.insert(self.tagName <- name,
-                                  self.tagCount <- count,
-                                 self.create_at <- create)
+        let insert = tags.insert(self.tagName <- tagName,
+                                 self.create_at <- create_at,
+                                 self.uid <- uid)
 
         do {
             let rowID = try database.run(insert)

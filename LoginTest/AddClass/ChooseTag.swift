@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct ChooseTag: View {
+    @ObservedObject var viewModel: TagInsertViewModel
+    @State var tag_name: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            ScrollView {
+                VStack{
+                    HStack {
+                        Text("名稱：")
+                        TextField("習慣名稱", text:$tag_name)
+                            .textFieldStyle(.roundedBorder)
+                            .keyboardType(.numberPad)
+                            .padding()
+                        Button {
+                            
+                        } label: {
+                                Text("建立")
+                            }
+                            .buttonStyle(.borderedProminent)
+                    }
+                }
+            }
+            .navigationTitle("建立標籤")
+        }
+        
     }
 }
 
 struct ChooseTag_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseTag()
+        ChooseTag(viewModel: TagInsertViewModel())
     }
 }
