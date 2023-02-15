@@ -19,8 +19,8 @@ struct AddSportWalk: View {
     
     @State var set_up_time: Date = Date()
     
-    let classification = ["學習","運動","生活","作息"]
-    @State var _classification = 0
+//    let classification = ["學習","運動","生活","作息"]
+//    @State var _classification = 0
     let sub_classification = ["健走","跑步","游泳","騎車"]
     @State var _sub_classification: Int = 0
     @State var task_name: String = ""
@@ -45,14 +45,14 @@ struct AddSportWalk: View {
                     Group {
                         HStack {
                         Text("類別：")
-                            Picker(selection: $viewModel._classification) {
-                                Text(classification[0]).tag(0)
-                                Text(classification[1]).tag(1)
-                                Text(classification[2]).tag(2)
-                                Text(classification[3]).tag(3)
-                            } label: {
-                                Text("選擇大類別")
-                            }
+//                            Picker(selection: $viewModel._classification) {
+//                                Text(classification[0]).tag(0)
+//                                Text(classification[1]).tag(1)
+//                                Text(classification[2]).tag(2)
+//                                Text(classification[3]).tag(3)
+//                            } label: {
+//                                Text("選擇大類別")
+//                            }
                             Picker(selection: $viewModel._sub_classification) {
                                 Text(sub_classification[0]).tag(0)
                                 Text(sub_classification[1]).tag(1)
