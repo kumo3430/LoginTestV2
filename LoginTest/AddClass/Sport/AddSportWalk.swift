@@ -37,6 +37,8 @@ struct AddSportWalk: View {
     //@State var completion: Int = 0
     @State var uid: Int = 0     //
     
+    @State private var chooseTag = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -64,6 +66,12 @@ struct AddSportWalk: View {
                         }
                         HStack {
                             Text("標籤：")
+                            Button("選擇標籤") {
+                                        chooseTag.toggle()
+                                    }
+                                    .sheet(isPresented: $chooseTag) {
+                                        ChooseTag()
+                                    }
                         }
                         HStack {
                             DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)

@@ -20,6 +20,7 @@
 		13952504299A1632005223B3 /* LivesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13952503299A1632005223B3 /* LivesDataStore.swift */; };
 		13952506299A1656005223B3 /* TagDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13952505299A1656005223B3 /* TagDataStore.swift */; };
 		13952508299A1F0A005223B3 /* SportWalkInertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13952507299A1F0A005223B3 /* SportWalkInertViewModel.swift */; };
+		1395250A299D0154005223B3 /* ChooseTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13952509299D0153005223B3 /* ChooseTag.swift */; };
 		13B341252986CD3F00D720A1 /* LoginInsertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B341242986CD3F00D720A1 /* LoginInsertViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		13952503299A1632005223B3 /* LivesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivesDataStore.swift; sourceTree = "<group>"; };
 		13952505299A1656005223B3 /* TagDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDataStore.swift; sourceTree = "<group>"; };
 		13952507299A1F0A005223B3 /* SportWalkInertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportWalkInertViewModel.swift; sourceTree = "<group>"; };
+		13952509299D0153005223B3 /* ChooseTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTag.swift; sourceTree = "<group>"; };
 		13B340FA29850D6100D720A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		13B341242986CD3F00D720A1 /* LoginInsertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 		1394468D298A1AA50085FF36 /* AddClass */ = {
 			isa = PBXGroup;
 			children = (
+				13952509299D0153005223B3 /* ChooseTag.swift */,
 				1394468E298A40F70085FF36 /* AddHabitClass.swift */,
 				13944690298A41490085FF36 /* Study */,
 				13944691298A416F0085FF36 /* Sport */,
@@ -210,6 +213,7 @@
 				13952506299A1656005223B3 /* TagDataStore.swift in Sources */,
 				13952508299A1F0A005223B3 /* SportWalkInertViewModel.swift in Sources */,
 				13952504299A1632005223B3 /* LivesDataStore.swift in Sources */,
+				1395250A299D0154005223B3 /* ChooseTag.swift in Sources */,
 				13944693298A42D70085FF36 /* AddStudyGeneral.swift in Sources */,
 				1394468F298A40F70085FF36 /* AddHabitClass.swift in Sources */,
 				13B341252986CD3F00D720A1 /* LoginInsertViewModel.swift in Sources */,
