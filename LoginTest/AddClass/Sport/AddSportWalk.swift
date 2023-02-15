@@ -5,6 +5,12 @@
 //  Created by 呂沄 on 2023/2/1.
 //
 
+// 提醒時間包含了日期
+// 大類別是否要做成選單
+// 尚未做小類別的判斷式
+// 選擇日期時間的格式
+// Sqlite 的日期時間為UTC
+
 import SwiftUI
 
 struct AddSportWalk: View {
@@ -67,14 +73,14 @@ struct AddSportWalk: View {
                         HStack {
                             Text("標籤：")
                         }
-//                        HStack {
-//                            DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)
-//
-//                        }
-//                        HStack {
-//                            DatePicker("結束日期：", selection: $viewModel.alert_time,displayedComponents: .date)
-//
-//                        }
+                        HStack {
+                            DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)
+
+                        }
+                        HStack {
+                            DatePicker("結束日期：", selection: $viewModel.finish,displayedComponents: .date)
+
+                        }
                         HStack {
                             Text("目標：")
                             TextField("km", value:$viewModel.quantity, format: .number)
