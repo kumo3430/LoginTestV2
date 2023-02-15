@@ -57,4 +57,7 @@ class SportWalkInsertViewModel: ObservableObject {
         // 執行 TaskDataStore裡的getAllTasks()
         allLive = LivesDataStore.shared.getAllTasks()
     }
+    
+    
+    
 }

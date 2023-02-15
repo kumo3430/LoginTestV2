@@ -88,77 +88,70 @@ class TagDataStore {
     func getAllTasks() -> [Tag] {
         var tags: [Tag] = []
         guard let database = db else { return [] }
-        
-        print(123)
-        print(tags)
-//        print(tag[])
-//        print(tag)
-//        print(Tag(id: <#Int64#>, name: <#String#>, count: <#Int#>, create_at: <#Date#>, update_at: <#Date#>, deleted_at: <#Date#>))
-        
         do {
             for tag in try database.prepare(self.tags) {
                 tags.append(Tag(id: tag[id],name: tag[tagName],count: tag[tagCount],create_at: tag[create_at], update_at: tag[update_at], deleted_at: tag[deleted_at]))
-//                'create_at', 'update_at', 'deleted_at'
             }
         } catch {
             print(error)
         }
-        print(tags)
-//        print(Tag(id: tag[id],name: tag[tagName],count: tag[tagCount],create_at: tag[create_at], update_at: tag[update_at], deleted_at: tag[deleted_at]))
         return tags
     }
 
-//    func findTask(tagId: Int64) -> Tag? {
-//        var tag: Tag = Tag(id: tagId, name: "", count: 1,create: Date())
-//        guard let database = db else { return nil }
-//
-//        let filter = self.tags.filter(id == tagId)
-//        do {
-//            for t in try database.prepare(filter) {
-//
-//                tag.name = t[tagName]
-//                tag.count = t[tagCount]
-//                tag.create = t[create_at]
-//
-//            }
-//        } catch {
-//            print(error)
-//        }
-//        return tag
-//    }
+    func findTask(tagId: Int64) -> Tag? {
+        var tag: Tag = Tag(id: tagId, name: "", count: 1,create_at: Date(),update_at: Date(), deleted_at: Date())
+        guard let database = db else { return nil }
+
+        let filter = self.tags.filter(id == tagId)
+        do {
+            for t in try database.prepare(filter) {
+
+                tag.name = t[tagName]
+                tag.count = t[tagCount]
+                tag.create_at = t[create_at]
+                tag.create_at = t[create_at]
+                tag.update_at = t[update_at]
+                tag.deleted_at = t[deleted_at]
+
+            }
+        } catch {
+            print(error)
+        }
+        return tag
+    }
 
 
-//    func update(id: Int64, name: String, count: Int) -> Bool {
-//        guard let database = db else { return false }
-//
-//        let task = tags.filter(self.id == id)
-//        do {
-//            let update = task.update([
-//                // 不確定
-//                tagName <- name,
-//                tagCount <- count
-//
-//            ])
-//            if try database.run(update) > 0 {
-//                return true
-//            }
-//        } catch {
-//            print(error)
-//        }
-//        return false
-//    }
-//
-//    func delete(id: Int64) -> Bool {
-//        guard let database = db else {
-//            return false
-//        }
-//        do {
-//            let filter = tags.filter(self.id == id)
-//            try database.run(filter.delete())
-//            return true
-//        } catch {
-//            print(error)
-//            return false
-//        }
-//    }
+    func update(id: Int64, name: String, count: Int) -> Bool {
+        guard let database = db else { return false }
+
+        let task = tags.filter(self.id == id)
+        do {
+            let update = task.update([
+                // 不確定
+                tagName <- name,
+                tagCount <- count
+
+            ])
+            if try database.run(update) > 0 {
+                return true
+            }
+        } catch {
+            print(error)
+        }
+        return false
+    }
+
+    func delete(id: Int64) -> Bool {
+        guard let database = db else {
+            return false
+        }
+        do {
+            let filter = tags.filter(self.id == id)
+            try database.run(filter.delete())
+            return true
+        } catch {
+            print(error)
+            return false
+        }
+    }
 }
