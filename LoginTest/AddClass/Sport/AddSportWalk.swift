@@ -75,10 +75,12 @@ struct AddSportWalk: View {
                         }
                         HStack {
                             DatePicker("開始日期：", selection: $viewModel.begin,displayedComponents: .date)
+                                .environment(\.locale, Locale.init(identifier: "zh-TW"))
 
                         }
                         HStack {
                             DatePicker("結束日期：", selection: $viewModel.finish,displayedComponents: .date)
+                                .environment(\.locale, Locale.init(identifier: "zh-TW"))
 
                         }
                         HStack {
@@ -106,6 +108,7 @@ struct AddSportWalk: View {
                         }
                         HStack {
                             DatePicker("提醒時間：", selection: $viewModel.alert_time,displayedComponents: .hourAndMinute)
+                                .environment(\.locale, Locale.init(identifier: "zh-TW"))
                             
                         }
 //                        HStack {
