@@ -11,10 +11,10 @@ class TagInsertViewModel: ObservableObject {
     @Published var allTag: [Tag] = []
     
     @Published var tagName: String = ""
-//    @Published var tagCount: String = ""
+    @Published var tagCount:  Int = 0
     @Published var create_at: Date = Date()
-//    @Published var update_at: Date = Date()
-//    @Published var deleted_at: Date = Date()
+    @Published var update_at: Date = Date()
+    @Published var deleted_at: Date = Date()
     @Published var uid: Int = 0
  
     
@@ -25,7 +25,10 @@ class TagInsertViewModel: ObservableObject {
             // 執行 TaskDataStore裡的insert()，並將剛剛輸入的帳號密碼回傳進function
             let id = TagDataStore.shared.insert(tagName: tagName,
                                                 uid:uid,
-                                                  create_at: create_at)
+                                                tagCount: tagCount,
+                                                  create_at: create_at,
+                                                update_at: update_at,
+                                                deleted_at: deleted_at)
             // （功能保留）
             /* if id != nil {
                 

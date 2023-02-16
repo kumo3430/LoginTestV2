@@ -71,31 +71,16 @@ class TagDataStore {
         }
     }
 
-    // 將回傳進來的帳號密碼資料放到資料庫裡面
-//    func insert(tagName: String, uid: Int, tagCount: Int, create_at: Date, update_at: Date,deleted_at: Date) -> Int64? {
-//        guard let database = db else { return nil }
-//
-//        let insert = tags.insert(self.tagName <- tagName,
-//                                 self.uid <- uid,
-//                                 self.tagCount <- tagCount,
-//                                 self.create_at <- create_at,
-//                                 self.update_at <- update_at,
-//                                 self.deleted_at <- deleted_at)
-//
-//        do {
-//            let rowID = try database.run(insert)
-//            return rowID
-//        } catch {
-//            print(error)
-//            return nil
-//        }
-//    }
-    func insert(tagName: String, uid: Int, create_at: Date) -> Int64? {
+//     將回傳進來的帳號密碼資料放到資料庫裡面
+    func insert(tagName: String, uid: Int, tagCount: Int, create_at: Date, update_at: Date,deleted_at: Date) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = tags.insert(self.tagName <- tagName,
                                  self.uid <- uid,
-                                 self.create_at <- create_at)
+                                 self.tagCount <- tagCount,
+                                 self.create_at <- create_at,
+                                 self.update_at <- update_at,
+                                 self.deleted_at <- deleted_at)
 
         do {
             let rowID = try database.run(insert)
@@ -105,6 +90,24 @@ class TagDataStore {
             return nil
         }
     }
+    
+    
+//    func insert(tagName: String, uid: Int, tagCount: Int, create_at: Date) -> Int64? {
+//        guard let database = db else { return nil }
+//
+//        let insert = tags.insert(self.tagName <- tagName,
+//                                 self.uid <- uid,
+//                                 self.tagCount <- tagCount,
+//                                 self.create_at <- create_at)
+//
+//        do {
+//            let rowID = try database.run(insert)
+//            return rowID
+//        } catch {
+//            print(error)
+//            return nil
+//        }
+//    }
 
     // 打開會面最一開始會先執行此function
     func getAllTasks() -> [Tag] {
@@ -121,7 +124,7 @@ class TagDataStore {
     }
 
     func findTask(tagId: Int64) -> Tag? {
-        var tag: Tag = Tag(id: tagId, name: "", uid: 0,count: 1,create_at: Date(),update_at: Date(), deleted_at: Date())
+        var tag: Tag = Tag(id: tagId, name: "", uid: 0,count: 0,create_at: Date(),update_at: Date(), deleted_at: Date())
         guard let database = db else { return nil }
 
         let filter = self.tags.filter(id == tagId)
