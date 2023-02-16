@@ -38,7 +38,7 @@ class TagDataStore {
 
             do {
                 try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                let dbPath = dirPath.appendingPathComponent(Self.STORE_NAME).path
+                let dbPath = dirPath.appendingPathComponent(TaskDataStore.STORE_NAME).path
                 db = try Connection(dbPath)
                 createTable()
                 print("SQLiteDataStore init successfully at: \(dbPath) ")
