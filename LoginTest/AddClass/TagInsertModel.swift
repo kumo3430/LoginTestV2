@@ -24,8 +24,8 @@ class TagInsertViewModel: ObservableObject {
             // 變數設定為 (dataStore: viewModel)
             // 執行 TaskDataStore裡的insert()，並將剛剛輸入的帳號密碼回傳進function
             let id = TagDataStore.shared.insert(tagName: tagName,
-                                                  create_at: create_at,
-                                                uid:uid)
+                                                uid:uid,
+                                                  create_at: create_at)
             // （功能保留）
             /* if id != nil {
                 

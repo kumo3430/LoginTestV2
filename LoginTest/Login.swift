@@ -16,6 +16,7 @@ struct Login {
 struct Tag {
     let id: Int64
     var name: String
+    var uid: Int
     var count: Int
     var create_at: Date
     var update_at: Date

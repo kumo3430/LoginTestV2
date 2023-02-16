@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChooseTag: View {
     @ObservedObject var viewModel: TagInsertViewModel
-    @State var tag_name: String = ""
+    @State var tagName: String = ""
     
     var body: some View {
         
@@ -18,7 +18,7 @@ struct ChooseTag: View {
                 VStack{
                     HStack {
                         Text("名稱：")
-                        TextField("習慣名稱", text:$tag_name)
+                        TextField("習慣名稱", text:$viewModel.tagName)
                             .textFieldStyle(.roundedBorder)
                             .keyboardType(.numberPad)
                             .padding()
