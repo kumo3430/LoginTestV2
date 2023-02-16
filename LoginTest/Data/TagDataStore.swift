@@ -59,8 +59,9 @@ class TagDataStore {
             try database.run(tags.create { table in
                 table.column(id, primaryKey: .autoincrement)
                 table.column(tagName)
-                table.column(tagCount)
+//                table.column(tagCount)
                 table.column(create_at)
+                table.column(uid)
             })
             print("Table Created...")
         } catch {

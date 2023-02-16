@@ -23,7 +23,8 @@ struct ChooseTag: View {
                             .keyboardType(.numberPad)
                             .padding()
                         Button {
-                            
+                            viewModel.onAddButtonClick()
+                            print(123)
                         } label: {
                                 Text("建立")
                             }
