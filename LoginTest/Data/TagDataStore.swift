@@ -22,8 +22,8 @@ class TagDataStore {
     private let uid = Expression<Int>("uid")
     private let tagCount = Expression<Int>("tagCount")
     private let create_at = Expression<Date>("create_at")
-    private let update_at = Expression<Date>("update_at")
-    private let deleted_at = Expression<Date>("deleted_at")
+    private let update_at = Expression<Date?>("update_at")
+    private let deleted_at = Expression<Date?>("deleted_at")
 
     //連接資料庫
     static let shared = TagDataStore()
@@ -72,7 +72,7 @@ class TagDataStore {
     }
 
 //     將回傳進來的帳號密碼資料放到資料庫裡面
-    func insert(tagName: String, uid: Int, tagCount: Int, create_at: Date, update_at: Date,deleted_at: Date) -> Int64? {
+    func insert(tagName: String, uid: Int, tagCount: Int, create_at: Date, update_at: Date? = nil,deleted_at: Date? = nil) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = tags.insert(self.tagName <- tagName,
@@ -115,7 +115,7 @@ class TagDataStore {
         guard let database = db else { return [] }
         do {
             for tag in try database.prepare(self.tags) {
-                tags.append(Tag(id: tag[id],name: tag[tagName],uid: tag[uid],count: tag[tagCount],create_at: tag[create_at], update_at: tag[update_at], deleted_at: tag[deleted_at]))
+                tags.append(Tag(id: tag[id],name: tag[tagName],uid: tag[uid],count: tag[tagCount],create_at: tag[create_at], update_at: tag[update_at] ?? Date(), deleted_at: tag[deleted_at] ?? Date()))
             }
         } catch {
             print(error)
@@ -146,7 +146,7 @@ class TagDataStore {
     }
 
 
-    func update(id: Int64, name: String, count: Int) -> Bool {
+    func update(id: Int64, name: String, count: Int, update_at: Date? = nil) -> Bool {
         guard let database = db else { return false }
 
         let task = tags.filter(self.id == id)
@@ -154,7 +154,8 @@ class TagDataStore {
             let update = task.update([
                 // 不確定
                 tagName <- name,
-                tagCount <- count
+                tagCount <- count,
+//                update_at <- update_at
 
             ])
             if try database.run(update) > 0 {

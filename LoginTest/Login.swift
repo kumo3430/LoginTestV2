@@ -19,8 +19,8 @@ struct Tag {
     var uid: Int
     var count: Int
     var create_at: Date
-    var update_at: Date
-    var deleted_at: Date
+    var update_at: Date?
+    var deleted_at: Date?
 }
 
 struct Lives {
