@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     
     @ObservedObject var viewModel: LoginInsertViewModel
 
@@ -20,18 +20,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                VStack {
-                    NavigationLink {
-                        AddHabitClass()
-                    } label: {
-                        Text("建立習慣")
-                    }
-                    NavigationLink {
-                        TaskListView(viewModel: TaskListViewModel())
-                    } label: {
-                        Text("習慣顯示")
-                    }
-                }
                 VStack(spacing:16){
                     // 上方選擇桿
                     Picker(selection: $isLoginMode, label: Text("Picker here")){
@@ -110,9 +98,9 @@ struct ContentView: View {
  */
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: LoginInsertViewModel())
+        LoginView(viewModel: LoginInsertViewModel())
     }
 }
 

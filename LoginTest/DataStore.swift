@@ -54,7 +54,7 @@ class TaskDataStore {
         do {
             try database.run(tasks.create { table in
                 table.column(id, primaryKey: .autoincrement)
-                table.column(loginEmail)
+                table.column(loginEmail, unique: true)
                 table.column(loginPassword)
             })
             print("Table Created...")
